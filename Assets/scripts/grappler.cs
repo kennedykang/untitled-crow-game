@@ -11,8 +11,9 @@ public class grappler : MonoBehaviour
     public LineRenderer lineR;
     public DistanceJoint2D disJ;
     Vector2 mouseP;
-    public Rigidbody2D tm;
-    bool canGrapple;
+    //public Rigidbody2D tm;
+    //bool canGrapple;
+    //float speed = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +27,10 @@ public class grappler : MonoBehaviour
         //canGrapple = disJ.connectedBody.CompareTag("ground");
         if (disJ.enabled)
         {
-            gameObject.transform.position = new Vector2(mouseP.x, mouseP.y);
+            //float step = speed * Time.deltaTime;
+            Vector2 target = new Vector2(mouseP.x, mouseP.y + 1);
+            gameObject.transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
+            //gameObject.transform.position = new Vector2(mouseP.x, mouseP.y);
         }
     }
 

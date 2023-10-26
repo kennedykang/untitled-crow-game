@@ -44,12 +44,7 @@ public class playercontroller : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-        /*if (context.canceled)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
-        */
-        Debug.Log("jump");
+
     }
 
     private void FixedUpdate()
