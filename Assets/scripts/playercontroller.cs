@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class playercontroller : MonoBehaviour
 {
 
-    [SerializeField] Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] float vel;
     float inputX;
     float movementX;
