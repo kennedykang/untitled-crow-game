@@ -45,6 +45,14 @@ public class grappler : MonoBehaviour
             disJ.connectedAnchor = mouseP;
             disJ.enabled = true;
             lineR.enabled = true;
+            if (mouseP.x < gameObject.transform.position.x)
+            {
+                gameObject.transform.localScale = new Vector2(-1, 1);
+            }
+            if (mouseP.x > gameObject.transform.position.x)
+            {
+                gameObject.transform.localScale = new Vector2(1, 1);
+            }
         }
         else if (context.canceled)
         {
