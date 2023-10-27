@@ -256,7 +256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4918425444923928602}
   vel: 5
-  jumpPower: 5
+  jumpPower: 6.5
   groundCheck: {fileID: 1567729579374435640}
   groundLayer:
     serializedVersion: 2
