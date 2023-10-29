@@ -24,44 +24,42 @@ public class grappler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //canGrapple = disJ.connectedBody.CompareTag("ground");
         if (disJ.enabled)
         {
-            //float step = speed * Time.deltaTime;
+            // Calculate the target point above the mouse position
             Vector2 target = new Vector2(mouseP.x, mouseP.y + 1);
+
+            // Move the gameObject towards the target
             gameObject.transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
-            //gameObject.transform.position = new Vector2(mouseP.x, mouseP.y);
+            
+            // Update the line renderer's position
+            lineR.SetPosition(1, transform.position);
+
+            // Update the distance of the DistanceJoint2D to retract the grappler
+            // This assumes that the grappler 'anchor' is at the gameObject's position
+            disJ.distance = Vector2.Distance(disJ.connectedAnchor, transform.position);
         }
     }
 
     public void OnGrapple(InputAction.CallbackContext context)
     {
-        
         if (context.performed)
         {
-            mouseP = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+            mouseP = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             lineR.SetPosition(0, mouseP);
             lineR.SetPosition(1, transform.position);
             disJ.connectedAnchor = mouseP;
             disJ.enabled = true;
             lineR.enabled = true;
-            if (mouseP.x < gameObject.transform.position.x)
-            {
-                gameObject.transform.localScale = new Vector2(-1, 1);
-            }
-            if (mouseP.x > gameObject.transform.position.x)
-            {
-                gameObject.transform.localScale = new Vector2(1, 1);
-            }
+
+            // Initialize the distance to the maximum length you want the grappler to have
+            // You might want to store this as a public variable to adjust in the editor
+            disJ.distance = Vector2.Distance(disJ.connectedAnchor, transform.position);
         }
         else if (context.canceled)
         {
             disJ.enabled = false;
             lineR.enabled = false;
-        }
-        if (disJ.enabled)
-        {
-            lineR.SetPosition(1, transform.position);
         }
     }
 }
