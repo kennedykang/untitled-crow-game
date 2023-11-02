@@ -273,9 +273,9 @@ GameObject:
   - component: {fileID: 883620219}
   - component: {fileID: 883620218}
   - component: {fileID: 883620217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1037,6 +1037,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 243688233069113220, guid: d198ebc2b8c581347b091a3e597fd646, type: 3}
+      propertyPath: jumpPower
+      value: 6.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1259529922175574637, guid: d198ebc2b8c581347b091a3e597fd646, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.577
