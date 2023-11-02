@@ -1,36 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class playercontroller : MonoBehaviour
 {
-
     public Rigidbody2D rb;
-    [SerializeField] float vel;
-    float inputX;
-    float movementX;
-    [SerializeField] float jumpPower;
-    //bool isJumping = false;
+    [SerializeField] private float vel;
+    private float movementX;
+    [SerializeField] private float jumpPower;
     public Transform groundCheck;
+    public float groundCheckDistance = 0.1f; // Distance to check for the ground
     public LayerMask groundLayer;
     public BoxCollider2D coll;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         rb.velocity = new Vector2(vel * movementX, rb.velocity.y);
-
-        //rb.velocity = Vector2.up * jumpPower;
-        
-        
     }
 
     public void OnMove(InputAction.CallbackContext movement)
@@ -44,24 +30,25 @@ public class playercontroller : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
-
     }
 
     private void FixedUpdate()
     {
-        inputX = Input.GetAxisRaw("Horizontal");
+        float inputX = Input.GetAxisRaw("Horizontal");
         if (inputX > 0)
         {
             gameObject.transform.localScale = new Vector2(1, 1);
         }
-        if (inputX < 0)
+        else if (inputX < 0)
         {
             gameObject.transform.localScale = new Vector2(-1, 1);
         }
-
     }
-    bool isGrounded()
+
+    private bool isGrounded()
     {
-        return Physics2D.BoxCast(coll.bounds.center, coll.bounds.size, 0f, Vector2.down, .1f, groundLayer);
+        // Send a raycast directly below the player
+        RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+        return hit.collider != null;
     }
 }
