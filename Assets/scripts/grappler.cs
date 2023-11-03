@@ -62,4 +62,16 @@ public class grappler : MonoBehaviour
             lineR.enabled = false;
         }
     }
+
+    private void FixedUpdate()
+    {
+        if (mouseP.x > gameObject.transform.position.x)
+        {
+            gameObject.transform.localScale = new Vector2(1, 1);
+        }
+        else if (mouseP.x < gameObject.transform.position.x)
+        {
+            gameObject.transform.localScale = new Vector2(-1, 1);
+        }
+    }
 }
