@@ -6,9 +6,9 @@ public class CollectObject : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(other.gameObject);
+            Destroy(gameObject);
         }
     }
 }
