@@ -13,6 +13,7 @@ public class playercontroller : MonoBehaviour
     public float groundCheckDistance = 0.1f; // Distance to check for the ground
     public LayerMask groundLayer;
     public BoxCollider2D coll;
+    [SerializeField] private AudioSource jumpSoundEffect;
 
     void Update()
     {
@@ -28,6 +29,7 @@ public class playercontroller : MonoBehaviour
     {
         if (context.performed && isGrounded())
         {
+            jumpSoundEffect.Play();
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
         }
     }
