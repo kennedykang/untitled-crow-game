@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,6 +15,17 @@ public class playercontroller : MonoBehaviour
     public LayerMask groundLayer;
     public BoxCollider2D coll;
     [SerializeField] private AudioSource jumpSoundEffect;
+    public GameObject levelComplete;
+    public GameObject startLevel;
+    public TextMeshProUGUI countText;
+    private int count;
+
+    void Start()
+    {
+        count = 0;
+        SetCountText();
+        levelComplete.SetActive(false);
+    }
 
     void Update()
     {
@@ -52,6 +64,30 @@ public class playercontroller : MonoBehaviour
         // Send a raycast directly below the player
         RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
         return hit.collider != null;
+    }
+    
+    void SetCountText()
+    {
+        countText.text = "Count: " + count.ToString();
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if ((other.gameObject.CompareTag("finish")) && count >= 3)
+        {
+            levelComplete.SetActive(true);
+        }
+        if (other.gameObject.CompareTag("PickUp"))
+        {
+            other.gameObject.SetActive(false);
+            count++;
+            SetCountText();
+        }
+        if (other.gameObject.CompareTag("start"))
+        {
+            other.gameObject.SetActive(false);
+            startLevel.SetActive(false);
+        }
     }
 
 }

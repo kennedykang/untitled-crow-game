@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ground
   - PickUp
+  - finish
+  - start
   layers:
   - Default
   - TransparentFX

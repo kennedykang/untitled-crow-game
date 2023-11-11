@@ -17,7 +17,7 @@ public class CollectObject : MonoBehaviour
     count = 0;
     SetCountText();
     }
-    void OnTriggerEnter2D(Collider2D other)
+    /*void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -25,5 +25,5 @@ public class CollectObject : MonoBehaviour
             count = count + 1;
             SetCountText();
         }
-    }
+    }*/
 }
