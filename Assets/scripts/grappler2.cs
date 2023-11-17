@@ -33,7 +33,6 @@ public class grappler2 : MonoBehaviour
 
     public void OnClick(InputAction.CallbackContext context)
     {
-        Debug.Log("grappled");
         if (context.performed)
         {
             // Check if enough time has passed since the last grapple
