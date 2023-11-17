@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "grapple",
+                    "name": "click",
                     "type": "Button",
                     "id": "e8a266c9-83ec-4f49-8053-b6bae5330539",
                     "expectedControlType": "Button",
@@ -118,7 +118,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "grapple",
+                    "action": "click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
