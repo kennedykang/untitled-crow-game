@@ -9,6 +9,7 @@ public class grappler : MonoBehaviour
     public Camera mainCamera;
     public LineRenderer lineR;
     public DistanceJoint2D disJ;
+    [SerializeField] GameObject player;
     Vector2 mouseP;
     
     private float lastGrappleTime = 0f;
@@ -26,7 +27,7 @@ public class grappler : MonoBehaviour
         if (disJ.enabled)
         {
             Vector2 target = new Vector2(mouseP.x, mouseP.y + 1);
-            gameObject.transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
+            player.transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
             lineR.SetPosition(1, transform.position);
             disJ.distance = Vector2.Distance(disJ.connectedAnchor, transform.position);
         }
