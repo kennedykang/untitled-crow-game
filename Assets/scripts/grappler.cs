@@ -27,9 +27,9 @@ public class grappler : MonoBehaviour
         if (disJ.enabled)
         {
             Vector2 target = new Vector2(mouseP.x, mouseP.y + 1);
-            player.transform.position = Vector2.Lerp(transform.position, target, Time.deltaTime);
-            lineR.SetPosition(1, transform.position);
-            disJ.distance = Vector2.Distance(disJ.connectedAnchor, transform.position);
+            player.transform.position = Vector2.Lerp(player.transform.position, target, Time.deltaTime);
+            lineR.SetPosition(1, player.transform.position);
+            disJ.distance = Vector2.Distance(disJ.connectedAnchor, player.transform.position);
         }
     }
 
@@ -42,11 +42,11 @@ public class grappler : MonoBehaviour
             {
                 mouseP = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
                 lineR.SetPosition(0, mouseP);
-                lineR.SetPosition(1, transform.position);
+                lineR.SetPosition(1, player.transform.position);
                 disJ.connectedAnchor = mouseP;
                 disJ.enabled = true;
                 lineR.enabled = true;
-                disJ.distance = Vector2.Distance(disJ.connectedAnchor, transform.position);
+                disJ.distance = Vector2.Distance(disJ.connectedAnchor, player.transform.position);
 
                 // Update the last grapple time
                 lastGrappleTime = Time.time;
