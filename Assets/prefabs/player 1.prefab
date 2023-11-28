@@ -234,7 +234,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1.5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4c3d90f2b54514c6bb4571cb99212d58, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -502,7 +502,7 @@ TargetJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_Target: {x: -7.5, y: -2.46}
   m_AutoConfigureTarget: 0
-  m_MaxForce: 100
+  m_MaxForce: 150
   m_DampingRatio: 1
   m_Frequency: 1
 --- !u!114 &1766732233178349202
@@ -628,16 +628,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f4f2759f42725448d756c1ccfcb939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  vel: 0
-  jumpPower: 0
+  rb: {fileID: 4918425444923928602}
+  vel: 5
+  jumpPower: 6.5
   groundCheck: {fileID: 0}
   groundCheckDistance: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
-  coll: {fileID: 4248157011169862194}
-  jumpSoundEffect: {fileID: 0}
+    m_Bits: 128
+  coll: {fileID: 3727847637156802479}
+  jumpSoundEffect: {fileID: 6932834531019836733}
   levelComplete: {fileID: 0}
   startLevel: {fileID: 0}
   countText: {fileID: 0}

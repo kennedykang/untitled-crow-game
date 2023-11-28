@@ -2917,6 +2917,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1096808449413150547}
+    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: vel
       value: 5
       objectReference: {fileID: 0}
@@ -3008,6 +3012,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 4918425444923928602, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 4c3d90f2b54514c6bb4571cb99212d58, type: 2}
     - target: {fileID: 5351126202375999867, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: m_MaxForce
       value: 150
@@ -3025,6 +3033,11 @@ BoxCollider2D:
 --- !u!82 &1096808449413150537 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 6932834531019836733, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
+  m_PrefabInstance: {fileID: 1096808449413150535}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1096808449413150547 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 4918425444923928602, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
   m_PrefabInstance: {fileID: 1096808449413150535}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
