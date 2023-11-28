@@ -2917,25 +2917,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 1096808449413150547}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: vel
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: coll
-      value: 
-      objectReference: {fileID: 1096808449413150536}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: countText
       value: 
       objectReference: {fileID: 1250477469}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: jumpPower
-      value: 6.5
-      objectReference: {fileID: 0}
     - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: startLevel
       value: 
@@ -2944,13 +2928,9 @@ PrefabInstance:
       propertyPath: levelComplete
       value: 
       objectReference: {fileID: 1001399256}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: jumpSoundEffect
-      value: 
-      objectReference: {fileID: 1096808449413150537}
-    - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
+    - target: {fileID: 208537243437070995, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 243688233069113220, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: countText
@@ -3012,34 +2992,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 4918425444923928602, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 4c3d90f2b54514c6bb4571cb99212d58, type: 2}
-    - target: {fileID: 5351126202375999867, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_MaxForce
-      value: 150
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
---- !u!61 &1096808449413150536 stripped
-BoxCollider2D:
-  m_CorrespondingSourceObject: {fileID: 3727847637156802479, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-  m_PrefabInstance: {fileID: 1096808449413150535}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1096808449413150537 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6932834531019836733, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-  m_PrefabInstance: {fileID: 1096808449413150535}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &1096808449413150547 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 4918425444923928602, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-  m_PrefabInstance: {fileID: 1096808449413150535}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
