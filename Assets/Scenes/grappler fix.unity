@@ -2132,6 +2132,7 @@ GameObject:
   - component: {fileID: 1049229489}
   - component: {fileID: 1049229488}
   - component: {fileID: 1049229492}
+  - component: {fileID: 1049229493}
   m_Layer: 0
   m_Name: finish line
   m_TagString: finish
@@ -2161,7 +2162,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1049229487}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4c3d90f2b54514c6bb4571cb99212d58, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2291,6 +2292,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1049229493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049229487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 034818f06c09542e0b1ed4d537d538f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1138496778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1259529922175574637, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
