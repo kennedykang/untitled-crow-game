@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 6932834531019836733}
   - component: {fileID: -7594729927705864926}
   m_Layer: 0
-  m_Name: player 1
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -356,7 +356,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4021425453987519146}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3b5552fee5d932d4fbc406d479230891, type: 2}
   m_CullingMode: 0
