@@ -26,6 +26,7 @@ public class grappler2 : MonoBehaviour
         {
             //Vector2 target = new Vector2(mouseP.x, mouseP.y + 1);
             //player.transform.position = Vector2.Lerp(player.transform.position, , Time.deltaTime);
+            //Vector3 offset = new Vector3(0.25f, 0f);
             lineR.SetPosition(1, transform.position);
             //disJ.distance = Vector2.Distance(disJ.connectedAnchor, player.transform.position);
         }

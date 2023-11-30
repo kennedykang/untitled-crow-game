@@ -68,7 +68,7 @@ public class playercontroller : MonoBehaviour
     
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Feathers x" + count.ToString();
     }
 
     void OnTriggerEnter2D(Collider2D other)
