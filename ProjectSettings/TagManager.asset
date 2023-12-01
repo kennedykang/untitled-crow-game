@@ -8,6 +8,7 @@ TagManager:
   - PickUp
   - finish
   - start
+  - spike
   layers:
   - Default
   - TransparentFX
