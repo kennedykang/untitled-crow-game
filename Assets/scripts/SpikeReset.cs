@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 using UnityEngine;
 
 
@@ -32,3 +33,5 @@ public class SpikeReset : MonoBehaviour
         }
     }
 }
+=======
+>>>>>>> Stashed changes
