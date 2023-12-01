@@ -8,44 +8,42 @@ public class grappler2 : MonoBehaviour
     public Camera mainCamera;
     public LineRenderer lineR;
     public TargetJoint2D targetJ;
-    Vector2 mouseP;
     public Animator move;
+    public AudioClip grappleSound;
 
+    private AudioSource audioSource;
     private float lastGrappleTime = 0f;
-    private float grappleCooldown = 3f; // 3 seconds cooldown
-    private bool isGrounded; // Tracks if the player is on the ground
+    private float grappleCooldown = 3f;
+    private bool isGrounded;
+    private Vector2 mouseP;
+    
+    private float grappleDuration = 5f;
+    private float grappleStartTime;
 
-    private float grappleDuration = 4f; // Maximum duration of grappling
-    private float grappleStartTime; // Time when grappling started
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
 
-    // Ground check variables
-    public Transform groundCheck; // A point at the player's feet to check for ground
-    public float groundCheckRadius = 0.2f; // Radius of the overlap circle for ground check
-    public LayerMask groundLayer; // Layer that represents the ground
-
-    // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         targetJ.enabled = false;
         lineR.enabled = false;
         move.SetBool("isGrappling", false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (targetJ.enabled)
         {
             lineR.SetPosition(1, transform.position);
 
-            // Check if the grapple duration has been exceeded
             if (Time.time - grappleStartTime >= grappleDuration)
             {
                 DisableGrapple();
             }
         }
 
-        // Check if the groundCheck position is overlapping any colliders on the groundLayer
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 
@@ -53,7 +51,6 @@ public class grappler2 : MonoBehaviour
     {
         if (context.performed)
         {
-            // Check if enough time has passed since the last grapple and if the player is grounded
             if (Time.time - lastGrappleTime >= grappleCooldown && isGrounded)
             {
                 mouseP = mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -63,8 +60,10 @@ public class grappler2 : MonoBehaviour
                 targetJ.enabled = true;
                 lineR.enabled = true;
 
-                lastGrappleTime = Time.time; // Update the last grapple time
-                grappleStartTime = Time.time; // Set the start time of grappling
+                lastGrappleTime = Time.time;
+                grappleStartTime = Time.time;
+
+                audioSource.PlayOneShot(grappleSound);
             }
             move.SetBool("isGrappling", true);
         }
@@ -96,7 +95,6 @@ public class grappler2 : MonoBehaviour
         }
     }
 
-    // Optionally, for debugging purposes, you can draw the ground check circle in the Scene view
     private void OnDrawGizmos()
     {
         if (groundCheck != null)
