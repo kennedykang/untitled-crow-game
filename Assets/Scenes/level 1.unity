@@ -3544,7 +3544,7 @@ PrefabInstance:
       objectReference: {fileID: 1001399256}
     - target: {fileID: 208537243437070995, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 243688233069113220, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: countText
