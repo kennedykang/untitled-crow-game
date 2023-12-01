@@ -15,6 +15,9 @@ public class grappler2 : MonoBehaviour
     private float grappleCooldown = 3f; // 3 seconds cooldown
     private bool isGrounded; // Tracks if the player is on the ground
 
+    private float grappleDuration = 4f; // Maximum duration of grappling
+    private float grappleStartTime; // Time when grappling started
+
     // Ground check variables
     public Transform groundCheck; // A point at the player's feet to check for ground
     public float groundCheckRadius = 0.2f; // Radius of the overlap circle for ground check
@@ -34,6 +37,12 @@ public class grappler2 : MonoBehaviour
         if (targetJ.enabled)
         {
             lineR.SetPosition(1, transform.position);
+
+            // Check if the grapple duration has been exceeded
+            if (Time.time - grappleStartTime >= grappleDuration)
+            {
+                DisableGrapple();
+            }
         }
 
         // Check if the groundCheck position is overlapping any colliders on the groundLayer
@@ -55,15 +64,21 @@ public class grappler2 : MonoBehaviour
                 lineR.enabled = true;
 
                 lastGrappleTime = Time.time; // Update the last grapple time
+                grappleStartTime = Time.time; // Set the start time of grappling
             }
             move.SetBool("isGrappling", true);
         }
         else if (context.canceled)
         {
-            targetJ.enabled = false;
-            lineR.enabled = false;
-            move.SetBool("isGrappling", false);
+            DisableGrapple();
         }
+    }
+
+    private void DisableGrapple()
+    {
+        targetJ.enabled = false;
+        lineR.enabled = false;
+        move.SetBool("isGrappling", false);
     }
 
     private void FixedUpdate()
