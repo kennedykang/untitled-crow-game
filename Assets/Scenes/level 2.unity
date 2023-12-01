@@ -2523,26 +2523,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1259529922175574637, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
   m_PrefabInstance: {fileID: 1096808449413150535}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
---- !u!114 &1138496791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954620328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8d2f9fc0e4c4cefb05c1e069538cf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-=======
 --- !u!95 &1138496785 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 208537243437070995, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
   m_PrefabInstance: {fileID: 1096808449413150535}
   m_PrefabAsset: {fileID: 0}
->>>>>>> 19e9af57bc99f20b5791ff81c83781c805c46d5b
 --- !u!1 &1250477467
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,11 +3292,7 @@ PrefabInstance:
     - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: move
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 0}
-=======
       objectReference: {fileID: 1138496785}
->>>>>>> 19e9af57bc99f20b5791ff81c83781c805c46d5b
     - target: {fileID: -7594729927705864926, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: countText
       value: 
