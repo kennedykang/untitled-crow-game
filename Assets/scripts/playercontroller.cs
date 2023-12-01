@@ -28,7 +28,7 @@ public class playercontroller : MonoBehaviour
         levelComplete.SetActive(false);
         move.SetBool("isWalking", false);
     }
-
+    
     void Update()
     {
         rb.velocity = new Vector2(vel * movementX, rb.velocity.y);
@@ -46,7 +46,7 @@ public class playercontroller : MonoBehaviour
     {
         movementX = movement.ReadValue<Vector2>().x;
     }
-
+    private Vector3 resetPosition = new Vector3(-6.88f, -2.48f, 0.03658727f);
     public void OnJump(InputAction.CallbackContext context)
     {
         if (context.performed && isGrounded())
@@ -98,6 +98,14 @@ public class playercontroller : MonoBehaviour
             other.gameObject.SetActive(false);
             startLevel.SetActive(false);
         }
+        if (other.CompareTag("spike"))
+        {
+            // Reset this object's (player's) position
+            transform.position = resetPosition;
+        }
     }
+    // Position to reset the player to
+    
 
+    
 }
