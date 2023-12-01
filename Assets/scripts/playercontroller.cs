@@ -99,8 +99,4 @@ public class playercontroller : MonoBehaviour
         }
         
     }
-    // Position to reset the player to
-    
-
-    
 }

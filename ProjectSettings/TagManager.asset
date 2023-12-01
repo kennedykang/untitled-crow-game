@@ -9,6 +9,7 @@ TagManager:
   - finish
   - start
   - spike
+  - Ground
   layers:
   - Default
   - TransparentFX
