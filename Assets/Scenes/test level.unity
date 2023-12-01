@@ -3568,32 +3568,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d31615af8e464d91837e50e5a1192b2, type: 3}
---- !u!1 &1063782718 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4021425453987519146, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-  m_PrefabInstance: {fileID: 1096808449413150535}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1138496778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1259529922175574637, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-  m_PrefabInstance: {fileID: 1096808449413150535}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1138496791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1063782718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f8d2f9fc0e4c4cefb05c1e069538cf4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  move: {fileID: 1138496798}
---- !u!95 &1138496798 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 208537243437070995, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
   m_PrefabInstance: {fileID: 1096808449413150535}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153148074
@@ -4696,10 +4673,6 @@ PrefabInstance:
       propertyPath: levelComplete
       value: 
       objectReference: {fileID: 1001399256}
-    - target: {fileID: 208537243437070995, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 243688233069113220, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: countText
       value: 
@@ -4756,45 +4729,14 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1766732233178349202, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1138496778}
-    - target: {fileID: 1766732233178349202, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: grappleSound
-      value: 
-      objectReference: {fileID: 8300000, guid: a0010a1a0c474473b81729eb770c485f, type: 3}
-    - target: {fileID: 1766732233178349202, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: groundCheckRadius
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1766732233178349202, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
     - target: {fileID: 4021425453987519146, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 4248157011169862194, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253636623825373368, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4253636623825373368, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1245191873
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4021425453987519146, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1138496791}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24ecec9fde1ac0d40ad4e95556ff961a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
