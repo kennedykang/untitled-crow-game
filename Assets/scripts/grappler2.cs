@@ -9,6 +9,7 @@ public class grappler2 : MonoBehaviour
     public LineRenderer lineR;
     public TargetJoint2D targetJ;
     Vector2 mouseP;
+    public Animator move;
 
     private float lastGrappleTime = 0f;
     private float grappleCooldown = 3f; // 3 seconds cooldown
@@ -17,6 +18,7 @@ public class grappler2 : MonoBehaviour
     void Start()
     {
         targetJ.enabled = false;
+        move.SetBool("isGrappling", false);
     }
 
     // Update is called once per frame
@@ -50,11 +52,13 @@ public class grappler2 : MonoBehaviour
                 // Update the last grapple time
                 lastGrappleTime = Time.time;
             }
+            move.SetBool("isGrappling", true);
         }
         else if (context.canceled)
         {
             targetJ.enabled = false;
             lineR.enabled = false;
+            move.SetBool("isGrappling", false);
         }
     }
 

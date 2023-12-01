@@ -19,17 +19,27 @@ public class playercontroller : MonoBehaviour
     public GameObject startLevel;
     public TextMeshProUGUI countText;
     private int count;
+    public Animator move;
 
     void Start()
     {
         count = 0;
         SetCountText();
         levelComplete.SetActive(false);
+        move.SetBool("isWalking", false);
     }
 
     void Update()
     {
         rb.velocity = new Vector2(vel * movementX, rb.velocity.y);
+        if (rb.velocity.x != 0)
+        {
+            move.SetBool("isWalking", true);
+        }
+        else
+        {
+            move.SetBool("isWalking", false);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext movement)
