@@ -17,7 +17,7 @@ public class grappler2 : MonoBehaviour
     private bool isGrounded;
     private Vector2 mouseP;
     
-    private float grappleDuration = 5f;
+    private float grappleDuration = 2.5f;
     private float grappleStartTime;
 
     public Transform groundCheck;
