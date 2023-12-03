@@ -6,7 +6,7 @@ public class SceneChanger : MonoBehaviour
 {
     void Start()
     {
-        StartCoroutine(WaitAndLoadNextScene(10));
+        StartCoroutine(WaitAndLoadNextScene(8));
     }
 
     IEnumerator WaitAndLoadNextScene(float waitTime)
