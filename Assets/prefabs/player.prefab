@@ -99,6 +99,8 @@ GameObject:
   - component: {fileID: 6932834531019836733}
   - component: {fileID: -7594729927705864926}
   - component: {fileID: 972336486059451784}
+  - component: {fileID: 3123055686582658272}
+  - component: {fileID: 5717978540746150130}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -461,7 +463,7 @@ LineRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 1
-      m_ColorSpace: 0
+      m_ColorSpace: -1
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -664,4 +666,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {fileID: 208537243437070995}
-  rb: {fileID: 4918425444923928602}
+--- !u!114 &3123055686582658272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021425453987519146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f8d2f9fc0e4c4cefb05c1e069538cf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  move: {fileID: 208537243437070995}
+--- !u!111 &5717978540746150130
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4021425453987519146}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
