@@ -1,59 +1,54 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement; // Needed to access scene information
 
 public class Timer : MonoBehaviour
 {
-    public static Timer instance; // Static reference to the instance
+    public static Timer Instance;
+
     public TextMeshProUGUI timerText;
     private float startTime;
-    private bool timerActive = false;
+    private bool timerStarted;
+
+    public string endSceneName = "EndScene"; // Name of the end scene
 
     void Awake()
     {
-        // Singleton pattern to ensure only one instance exists
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
+            startTime = Time.time;
+            timerStarted = true;
         }
-        else if (instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
-            return;
         }
     }
-
-    void Start()
-    {
-        if (timerText == null)
-        {
-            timerText = FindObjectOfType<TextMeshProUGUI>();
-        }
-        StartTimer();
-    }   
 
     void Update()
     {
-        if (timerActive && timerText != null)
-        {
-            float t = Time.time - startTime;
-            string minutes = ((int)t / 60).ToString("00");
-            string seconds = (t % 60).ToString("00.00");
-            timerText.text = minutes + ":" + seconds;
-        }
+        if (!timerStarted) return;
+
+        float t = Time.time - startTime;
+        string minutes = ((int)t / 60).ToString();
+        string seconds = (t % 60).ToString("f2");
+        timerText.text = minutes + ":" + seconds;
+
+        CheckEndScene();
     }
 
-    public void StartTimer()
+    public void ResetTimer()
     {
-        if (!timerActive)
-        {
-            startTime = Time.time;
-            timerActive = true;
-        }
+        startTime = Time.time;
     }
 
-    public void StopTimer()
+    private void CheckEndScene()
     {
-        timerActive = false;
+        if (SceneManager.GetActiveScene().name == endSceneName)
+        {
+            Destroy(gameObject);
+        }
     }
 }
