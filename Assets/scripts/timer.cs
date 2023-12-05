@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement; // Needed to access scene information
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -9,8 +9,10 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText;
     private float startTime;
     private bool timerStarted;
+    private bool timerStopped; 
 
-    public string endSceneName = "EndScene"; // Name of the end scene
+    private float finalTime; 
+    public string endSceneName = "EndScene"; 
 
     void Awake()
     {
@@ -20,6 +22,9 @@ public class Timer : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             startTime = Time.time;
             timerStarted = true;
+            timerStopped = false;
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else if (Instance != this)
         {
@@ -27,9 +32,14 @@ public class Timer : MonoBehaviour
         }
     }
 
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     void Update()
     {
-        if (!timerStarted) return;
+        if (!timerStarted || timerStopped) return;
 
         float t = Time.time - startTime;
         string minutes = ((int)t / 60).ToString();
@@ -42,11 +52,28 @@ public class Timer : MonoBehaviour
     public void ResetTimer()
     {
         startTime = Time.time;
+        timerStopped = false;
     }
 
     private void CheckEndScene()
     {
-        if (SceneManager.GetActiveScene().name == endSceneName)
+        if (SceneManager.GetActiveScene().name == endSceneName && !timerStopped)
+        {
+            finalTime = Time.time - startTime;
+            timerStopped = true;
+
+            // Set the font size to 5
+            timerText.fontSize = 22;
+
+            string finalMinutes = ((int)finalTime / 60).ToString();
+            string finalSeconds = (finalTime % 60).ToString("f2");
+            timerText.text = "Congratulations, you completed the game in " + finalMinutes + ":" + finalSeconds;
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == 1)
         {
             Destroy(gameObject);
         }
