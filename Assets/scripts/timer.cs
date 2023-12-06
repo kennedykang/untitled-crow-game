@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Timer : MonoBehaviour
 {
@@ -61,14 +62,23 @@ public class Timer : MonoBehaviour
         {
             finalTime = Time.time - startTime;
             timerStopped = true;
-
-            // Set the font size to 5
-            timerText.fontSize = 22;
-
-            string finalMinutes = ((int)finalTime / 60).ToString();
-            string finalSeconds = (finalTime % 60).ToString("f2");
-            timerText.text = "Congratulations, you completed the game in " + finalMinutes + ":" + finalSeconds;
+            
+            StartCoroutine(DisplayCongratulatoryMessage());
         }
+    }
+
+    private IEnumerator DisplayCongratulatoryMessage()
+    {
+        // Wait for 2 seconds
+        yield return new WaitForSeconds(2);
+
+        // Set the font size to 5
+        timerText.fontSize = 20;
+
+        // Display the final time with a congratulatory message
+        string finalMinutes = ((int)finalTime / 60).ToString();
+        string finalSeconds = (finalTime % 60).ToString("f2");
+        timerText.text = "Congratulations, you completed the game in " + finalMinutes + ":" + finalSeconds;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
